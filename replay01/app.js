@@ -1,5 +1,20 @@
-const data = require("./hallo");
+let hallo = function (who) {
+    console.log('Hallo ' + who());
+};
 
-console.log(data.name("Hallo "));
+let getName = function () {
+    return 'Welt';
+};
 
-require("./unterordner");
+hallo(getName);
+hallo(function () {
+    return 'node.js';
+});
+
+let hi = function (w) {
+    w('Hallo Welt!');
+};
+
+hi(function (xyz) {
+    console.log(xyz);
+});
